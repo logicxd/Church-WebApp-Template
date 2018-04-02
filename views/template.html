@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Church</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">-->
+    <!-- Replace this here -->
+    <!--<link rel="stylesheet" href="css/template.css" />-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://use.fontawesome.com/c47f013911.js"></script>
+</head>
+<body>
+    <header id="header" class="scrollspy"></header>
+    <main>
+       
+    </main>
+    <footer id="footer"></footer>
+
+    <!-- End load scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="lib/materialize-css/js/materialize.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>-->
+    <script type="text/javascript">
+        // ejs template loading.
+        var upcomingEvents = '<%- JSON.stringify(upcomingEvents) %>';
+
+        // Header-prioritized and footer loading.
+        $('#header').load('layout/header.html', function () {
+            $.getScript('js/header.js');
+            //$.getScript('js/template.js')
+            $('#footer').load('layout/footer.html', function () {
+                $.getScript('js/footer.js');
+            });
+        });
+    </script>
+</body>
+</html>
+
+<!--<div class="slider">
+    <ul class="slides">
+        <li>
+            <img src="img/2014-bcfc-christmas.jpg">
+            <div class="caption center-align blue-grey">
+                <h3>This is our big Tagline!</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+            </div>
+        </li>
+        <li>
+            <img src="img/background1.jpg">
+            <div class="caption left-align">
+                <h3>Left Aligned Caption</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+            </div>
+        </li>
+        <li>
+            <img src="img/background2.jpg">
+            <div class="caption right-align">
+                <h3>Right Aligned Caption</h3>
+                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+            </div>
+        </li>
+    </ul>
+</div>-->

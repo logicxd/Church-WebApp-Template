@@ -1,0 +1,13 @@
+@import '../lib/materialize-css/sass/materialize.scss';
+@import '../scss/layout.scss';
+
+#banner {
+    @extend .my-white-text;
+    background-color: $primary-color;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    background-color: grey;
+}

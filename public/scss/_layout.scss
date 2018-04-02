@@ -1,0 +1,127 @@
+@import '../lib/materialize-css/sass/components/_variables.scss';
+
+// My variables.
+$logo-blue: #90bde3;
+$facebook-blue: #3B5998;
+$twitter-blue: #4099FF;
+$youtube-red: #CD201F;
+
+/* Global */
+// Highlights the borders to see if there are anything that are out of bounds
+
+/** {
+    background: #000 !important;
+    color: #0f0 !important;
+    outline: solid #f00 1px !important;
+}*/
+
+[v-cloak] {
+    display: none
+}
+
+.facebook-blue {
+    background-color: $facebook-blue;
+}
+
+.twitter-blue {
+    background-color: $twitter-blue;
+}
+
+.youtube-red {
+    background-color: $youtube-red;
+}
+
+.row-m-b-0 {
+    @extend .row;
+    margin-bottom: 0px;
+}
+
+.my-white-text {
+    @extend .blue-grey-text, .text-lighten-5;
+}
+
+.primary-color-text {
+    color: $primary-color;
+}
+
+.primary-color-dark-text {
+    color: $primary-color-dark;
+}
+
+.primary-color-light-text {
+    color: $primary-color-light;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+ul.scrollfire li,
+img.scrollfire {
+    opacity: 0;
+}
+
+.page-header {
+    padding: 60px 0px 60px 0px;
+}
+
+#header {
+    .row {
+        @extend .z-depth-0;
+        margin-bottom: 0px;
+    }
+
+    .nav-wrapper {
+        @extend .white;
+    }
+
+    .menu {
+        @extend .center-align;
+        color: $secondary-color;
+        font-size: large;
+    }
+
+    .menu-item {
+        color: $primary-color;
+        font-size: medium;
+    }
+    // Mobile
+    .button-collapse {
+        color: $primary-color;
+    }
+
+    #slide-out {
+        .logo {
+            padding: 5px 0 60px 0;
+        }
+
+        .no-padding a {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+    }
+}
+
+#footer {
+    #newsletter-div {
+        @extend .white, .black-text;
+
+        #newsletter-form button {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .input-field {
+            margin: 0;
+        }
+    }
+
+    .page-footer, a {
+        @extend .my-white-text;
+    }
+
+    label[for=newsletter-name],
+    label[for=newsletter-email]{
+        width: 60px;
+    }
+}

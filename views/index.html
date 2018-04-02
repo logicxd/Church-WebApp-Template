@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Church</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://use.fontawesome.com/c47f013911.js"></script>
+</head>
+<body>
+    <header id="header" class="scrollspy"></header>
+    <main id="app" v-cloak>
+        <video id="home-page-video" autoplay loop muted poster="vid/Perfect_Hour/Perfect_Hour.jpg">
+            <source src="vid/Perfect_Hour/Perfect_Hour.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+            <source src="vid/Perfect_Hour/Perfect_Hour.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        </video>
+        <header id="introduction" class="section">
+            <h1 class="header center">Hope for Hopeless</h1>
+            <h5 class="header center">
+                123 Jesus Street, Daly City CA
+            </h5>
+            <h5 class="header center">
+                Sundays 6:00 PM - 8:00 PM
+            </h5>
+        </header>
+        <div id="latest-sermon" class="section">
+            <div class="container">
+                <ul id="latest-sermon-scrollfire" class="">
+                    <li>
+                        <h2 class="header center">Latest Message</h2>
+                    </li>
+                    <li>
+                        <div class="row">
+                            <div class="col s12 m8">
+                                <div class="video-container hoverable">
+                                    <iframe class="" src="https://www.youtube.com/embed/0vrdgDdPApQ" width="560" height="315" frameborder="0" style="border:none;overflow:hidden" allow="autoplay; encrypted-media" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+                                </div>
+                            </div>
+                            <div class="col s12 m4">
+                                <h4 class="header center">Demo Message</h4>
+                                <p class="flow-text">
+                                    Latest news!
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section white">
+            <div class="container">
+                <ul id="upcoming-events" class="scrollfire">
+                    <li>
+                        <h2 class="header center">Events</h2>
+                    </li>
+                    <li v-for="upcomingEvent in upcomingEvents">
+                        <div class="row">
+                            <div class="col s12 m8 offset-m2">
+                                <h5 class="header"><i class="fa fa-calendar fa-sm"></i> {{ upcomingEvent.date }}</h5>
+                                <div class="card hoverable">
+                                    <div class="card-content white-text">
+                                        <span class="card-title">{{ upcomingEvent.title }}</span>
+                                        <p>{{ upcomingEvent.about }}</p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a href="#">This is a link</a>
+                                        <a href="#">This is a link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li v-if="upcomingEvents.length === 0">
+                        <p class="center-align">No upcoming events</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer id="footer"></footer>
+
+    <!-- End load scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="lib/materialize-css/js/materialize.min.js"></script>
+    <script type="text/javascript">
+        // ejs template loading.
+        var upcomingEvents = '<%- JSON.stringify(upcomingEvents) %>';
+
+        // Header-prioritized and footer loading.
+        $('#header').load('layout/header.html', function () {
+            $.getScript('js/header.js');
+            $.getScript('js/index.js')
+            $('#footer').load('layout/footer.html', function () {
+                $.getScript('js/footer.js');
+            });
+        });
+    </script>
+</body>
+</html>

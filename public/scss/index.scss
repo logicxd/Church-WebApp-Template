@@ -1,0 +1,33 @@
+﻿@import '../lib/materialize-css/sass/materialize.scss';
+@import '../scss/layout.scss';
+
+#home-page-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+}
+
+#introduction {
+    @extend .my-white-text;
+    padding-top: 18%;
+    padding-bottom: 18%;
+}
+
+#latest-sermon {
+    @extend .my-white-text, .flow-text;
+    background-color: $primary-color;
+}
+
+.parallax-container {
+    height: 500px;
+}

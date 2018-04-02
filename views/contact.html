@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Church</title>
+    <link async href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css" rel="stylesheet" />
+    <link async href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link async rel="stylesheet" href="css/contact.css" />
+
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+    <script async src="https://unpkg.com/vue"></script>
+    <script async src="https://use.fontawesome.com/c47f013911.js"></script>
+</head>
+<body>
+    <header id="header" class="scrollspy"></header>
+    <main>
+        <header id="banner" class="section page-header">
+            <div class="row center">
+                <h1>Contact</h1>
+            </div>
+        </header>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m4 push-m8">
+                        <h5 class="header bold">Location</h5>
+                        <section>
+                            Myanmar Burmese Family Church <br />
+                            123 Jesus Street <br />
+                            Daly City, CA 94015
+                        </section>
+                        <h5 class="header bold">Phone</h5>
+                        <section>
+                            Pastor: 650-111-2222 <br />
+                            Director: 650-111-2223 
+                        </section>
+                        <h5 class="header bold">Email</h5>
+                        <section>
+                            Pastor: <u><a href="mailto:paul@email.com" class="primary-color-text">paul@email.com</a></u> <br />
+                            Director: <u><a href="mailto:john@email.com" class="primary-color-text">john@email.com</a></u>
+                        </section>
+                    </div>
+                    <div class="col s12 m8 pull-m4">
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    <footer id="footer"></footer>
+
+    <!-- End load scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="lib/materialize-css/js/materialize.min.js"></script>
+    <script type="text/javascript">
+        // ejs template loading.
+        var googleApiKey = '<%- googleApiKey %>';
+
+        // Header-prioritized and footer loading.
+        $('#header').load('layout/header.html', function () {
+            $.getScript('js/header.js');
+            $.getScript('js/contact.js');
+            $('#footer').load('layout/footer.html', function () {
+                $.getScript('js/footer.js');
+                $.getScript('https://maps.googleapis.com/maps/api/js?key=' + googleApiKey + '&callback=initMap');
+            });
+        });
+    </script>
+</body>
+</html>
