@@ -16,7 +16,7 @@
     "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",
     "ejs": "^2.5.6",
-    "express": "^4.15.3",
+    "express": "^4.17.3",
     "forever-monitor": "^1.7.1",
     "materialize-css": "^0.99.0",
     "mongodb": "^3.1.13",
