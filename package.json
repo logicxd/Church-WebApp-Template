@@ -17,7 +17,7 @@
     "cookie-parser": "^1.4.3",
     "ejs": "^2.5.6",
     "express": "^4.15.3",
-    "forever-monitor": "^1.7.1",
+    "forever-monitor": "^3.0.3",
     "materialize-css": "^0.99.0",
     "mongodb": "^3.1.13",
     "morgan": "^1.8.2",
